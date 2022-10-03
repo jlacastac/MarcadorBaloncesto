@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/localScoreTextTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/localScoreText"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/localScoreTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localScoreTextTV"
+            android:layout_alignStart="@id/localScoreTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textSize="64dp" />
+
+        <Button
+            android:id="@+id/localSubBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/localScoreTV"
+            android:layout_alignBottom="@id/localScoreTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="19dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/subBtnText" />
+
+        <Button
+            android:id="@+id/localAddOneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localScoreTextTV"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="36dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/addOneBtnText"/>
+
+        <Button
+            android:id="@+id/localAddTwoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localAddOneBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/addTwoBtnText" />
+
+        <ImageView
+            android:id="@+id/basketBallIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/basket_ball"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:layout_alignStart="@id/localScoreTextTV"
+            android:layout_alignEnd="@id/localScoreTextTV"/>
+
+        <ImageButton
+            android:id="@+id/restartScoreIBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localScoreTV"
+            android:layout_alignStart="@id/localSubBtn"
+            android:layout_alignEnd="@id/localSubBtn"
+            android:layout_alignTop="@id/basketBallIV"
+            android:layout_marginVertical="26dp"
+            android:textColor="@color/black"
+            android:src="@drawable/clock"
+            android:scaleType="centerInside"
+            android:layout_marginRight="24dp"
+            android:layout_alignBottom="@id/basketBallIV"/>
+
+        <ImageButton
+            android:id="@+id/openDetailsIBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localScoreTV"
+            android:layout_alignStart="@id/localAddOneBtn"
+            android:layout_alignEnd="@id/localAddOneBtn"
+            android:layout_alignTop="@id/basketBallIV"
+            android:layout_marginVertical="26dp"
+            android:textColor="@color/black"
+            android:src="@drawable/arrow"
+            android:scaleType="centerInside"
+            android:layout_marginLeft="24dp"
+            android:layout_alignBottom="@id/basketBallIV"/>
+
+        <TextView
+            android:id="@+id/visitantScoreTextTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:text="@string/visitanteScoreText"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/visitantScoreTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/visitantScoreTextTV"
+            android:layout_alignStart="@id/localScoreTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:textColor="@color/black"
+            android:textSize="64dp" />
+
+        <Button
+            android:id="@+id/visitantSubBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/visitantScoreTV"
+            android:layout_alignBottom="@id/visitantScoreTV"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="19dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/subBtnText" />
+
+        <Button
+            android:id="@+id/visitantAddOneBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:layout_above="@id/visitantAddTwoBtn"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/addOneBtnText"/>
+
+        <Button
+            android:id="@+id/visitantAddTwoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/visitantScoreTextTV"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="43dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@string/addTwoBtnText" />
+
+    </RelativeLayout>
+</layout>

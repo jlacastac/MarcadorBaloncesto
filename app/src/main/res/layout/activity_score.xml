@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ScoreActivity">
+
+        <TextView
+            android:id="@+id/scoreDetailTopTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scoreDetailTopText"
+            android:gravity="center"
+            android:textSize="36dp"
+            android:layout_marginTop="26dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/localScoreDetailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreDetailTopTV"
+            android:layout_alignBaseline="@id/separatorScoreDetailTV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/separatorScoreDetailTV"
+            android:textColor="@color/black"
+            android:textSize="64dp" />
+
+        <TextView
+            android:id="@+id/separatorScoreDetailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scoreDetailTopTV"
+            android:textSize="64dp"
+            android:layout_marginTop="200dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/visitantScoreDetailTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/separatorScoreDetailTV"
+            android:layout_below="@id/scoreDetailTopTV"
+            android:textSize="64dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBaseline="@id/separatorScoreDetailTV" />
+
+        <TextView
+            android:id="@+id/resultTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorScoreDetailTV"
+            android:layout_marginTop="50dp"
+            android:text="Fue un empate."
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="40dp"/>
+
+    </RelativeLayout>
+</layout>

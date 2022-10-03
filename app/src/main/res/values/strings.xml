@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MarcadorBaloncesto</string>
+    <string name="localScoreText">Local</string>
+    <string name="visitanteScoreText">Visitante</string>
+    <string name="addOneBtnText">+1</string>
+    <string name="addTwoBtnText">+2</string>
+    <string name="subBtnText">-1</string>
+    <string name="scoreDetailTopText">Local - Visitante</string>
+</resources>
