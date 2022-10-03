@@ -6,4 +6,7 @@
     <string name="addTwoBtnText">+2</string>
     <string name="subBtnText">-1</string>
     <string name="scoreDetailTopText">Local - Visitante</string>
+    <string name="victoria">¡Gano el equipo local! U+1F601</string>
+    <string name="empate">¡Ganaron los visitantes! U+1F614</string>
+    <string name="derrota">Fue un empate U+1F612</string>
 </resources>

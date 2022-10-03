@@ -4,24 +4,52 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iesch.pmdm.marcadorbaloncesto.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
 
+    Bundle extras;
+    TextView localScoreTV;
+    TextView visitantScoreTV;
+    TextView resultTV;
+    ActivityScoreBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActivityScoreBinding binding = ActivityScoreBinding.inflate(getLayoutInflater());
+        initialize();
+        setResult();
+    }
+
+    private void initialize() {
+        binding = ActivityScoreBinding.inflate(getLayoutInflater());
+        extras = getIntent().getExtras();
+        localScoreTV = binding.localScoreDetailTV;
+        visitantScoreTV = binding.visitantScoreDetailTV;
+
         setContentView(binding.getRoot());
+    }
 
-        Bundle extras = new Bundle();
+    private void setResult() {
+        localScoreTV.setText(extras.getString("localScore"));
+        visitantScoreTV.setText(extras.getString("visitantScore"));
 
-        TextView localScore = binding.localScoreDetailTV;
-        TextView visitantScore = binding.visitantScoreDetailTV;
+        switch(Integer.compare(Integer.valueOf(extras.getString("localScore")),
+                               Integer.valueOf((extras.getString("visitantScore"))))) {
+            case 1:
+                resultTV.setText(getResources().getString(R.string.victoria));
+                break;
 
-        localScore.setText(Integer.toString(extras.getInt("localScore")));
-        visitantScore.setText(Integer.toString(extras.getInt("visitantScore")));
+            case 0:
+                resultTV.setText(getResources().getString(R.string.empate));
+                break;
+
+            case -1:
+                resultTV.setText(getResources().getString(R.string.derrota));
+                break;
+        }
     }
 }

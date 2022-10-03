@@ -13,15 +13,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.iesch.pmdm.marcadorbaloncesto.databinding.ActivityMainBinding;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Method;
+
 public class MainActivity extends AppCompatActivity {
 
-    Counter localScore;
-    Counter visitantScore;
+    private Counter localScore;
+    private Counter visitantScore;
 
     private TextView localScoreTV;
     private TextView visitantScoreTV;
@@ -37,14 +40,19 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton restartScoreIBtn;
     private ImageButton openDetailsIBtn;
 
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        initialize();
+        setListeners();
+        resetMatch();
+    }
 
+    private void initialize() {
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         localScore = new Counter(0);
         visitantScore = new Counter(0);
 
@@ -62,8 +70,10 @@ public class MainActivity extends AppCompatActivity {
         restartScoreIBtn = binding.restartScoreIBtn;
         openDetailsIBtn = binding.openDetailsIBtn;
 
-        resetMatch();
+        setContentView(binding.getRoot());
+    }
 
+    private void setListeners() {
         localAddOneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,8 +133,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void goDetails() {
         Intent detailIntent = new Intent(this, ScoreActivity.class);
-        detailIntent.putExtra("localScore", localScore.getNumber());
-        detailIntent.putExtra("visitantScore", visitantScore.getNumber());
+
+        detailIntent.putExtra("localScore", Integer.toString(localScore.getNumber()));
+        detailIntent.putExtra("visitantScore", Integer.toString(visitantScore.getNumber()));
 
         startActivity(detailIntent);
     }

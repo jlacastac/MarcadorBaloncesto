@@ -54,6 +54,7 @@
             android:textSize="64dp"
             android:textColor="@color/black"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
             android:layout_alignBaseline="@id/separatorScoreDetailTV" />
 
         <TextView
@@ -62,7 +63,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/separatorScoreDetailTV"
             android:layout_marginTop="50dp"
-            android:text="Fue un empate."
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="40dp"/>
